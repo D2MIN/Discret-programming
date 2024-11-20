@@ -218,5 +218,6 @@ function main(matrix){
         return [answer, elPosition];
     }else{
         console.log(statusAnswer, 'Что то пошло не так');
+        return false;
     };
 };
