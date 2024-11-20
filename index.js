@@ -17,6 +17,7 @@ btnCalc.addEventListener('click', ()=>{
     console.log(answer, elPosition);
 
     if(answer != false){
+        [answer, elPosition] = answer;
         answerSection.innerHTML = `<h1>Ответ: ${answer}</h1>`;
         let positionsHtml = Object.keys(elPosition).map(key => `<h2 class="elPos">(${key}): ${elPosition[key]}</h2>`).join('');
         answerElemSection.innerHTML = `<h1>На позициях:</h1>${positionsHtml}`;
