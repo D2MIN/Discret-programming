@@ -13,10 +13,14 @@ btnCalc.addEventListener('click', ()=>{
         matrix.push(row);
     }
 
-    [answer, elPosition] = window.main(matrix);
+    let answer = window.main(matrix);
     console.log(answer, elPosition);
 
-    answerSection.innerHTML = `<h1>Ответ: ${answer}</h1>`;
-    let positionsHtml = Object.keys(elPosition).map(key => `<h2 class="elPos">(${key}): ${elPosition[key]}</h2>`).join('');
-    answerElemSection.innerHTML = `<h1>На позициях:</h1>${positionsHtml}`;
+    if(answer != false){
+        answerSection.innerHTML = `<h1>Ответ: ${answer}</h1>`;
+        let positionsHtml = Object.keys(elPosition).map(key => `<h2 class="elPos">(${key}): ${elPosition[key]}</h2>`).join('');
+        answerElemSection.innerHTML = `<h1>На позициях:</h1>${positionsHtml}`;
+    }else{
+        answerSection.innerHTML = `<h1>Ошибка решения :(</h1>`;
+    }
 });
